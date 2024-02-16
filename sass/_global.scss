@@ -1,0 +1,74 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Rubik",
+        sans-serif;
+    background: $veryDarkBlue;
+    width: 100%;
+    min-height: calc(100vh - 0.1px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: rem(40);
+    font-weight: 300;
+}
+
+h2 {
+    font-size: rem(22);
+    font-weight: 500;
+    color: #fff;
+}
+
+.bg-work {
+    background: $lightRedWork;
+}
+
+.bg-play {
+    background: $softBluePlay
+}
+
+.bg-exercise {
+    background: $limeGreenExercise;
+}
+
+.bg-study {
+    background: $lightRedStudy;
+}
+
+.bg-social {
+    background: $violetSocial;
+}
+
+.bg-self_care {
+    background: $softOrangeSelfCare;
+}
+
+.footer {
+    width: 100%;
+    padding: rem(30);
+    text-align: center;
+    background: $darkBlue;
+    margin-top: rem(50);
+    color: $paleBlue;
+
+    a {
+        color: $limeGreenExercise;
+        text-decoration: none;
+        transition: 0.2s ease;
+        font-size: rem(16);
+
+        &:hover {
+            color: $violetSocial;
+        }
+    }
+}

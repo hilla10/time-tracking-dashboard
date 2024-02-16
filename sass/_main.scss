@@ -1,0 +1,161 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: rem(100) 0;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-content: center;
+        align-items: flex-start;
+        gap: rem(30);
+
+        @include breakpointDown(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            margin: rem(80) 0;
+        }
+
+        @include breakpointDown(mobile) {
+            grid-template-columns: 1fr;
+        }
+
+        &-item {
+            position: relative;
+            border-radius: rem(20);
+            background: $darkBlue;
+            color: $paleBlue;
+            max-width: rem(260);
+
+            @include breakpointDown(mobile) {
+                max-width: 100%;
+                margin-bottom: rem(22);
+
+                &__days {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+            }
+
+            &__avatar {
+                background: $blue;
+                border-radius: rem(20);
+                padding: rem(34) rem(30);
+
+                img {
+                    width: rem(86);
+                    height: rem(86);
+                    border: 2px solid $paleBlue;
+                    border-radius: 50%;
+                    display: block;
+                    margin-bottom: rem(40);
+                }
+
+                span {
+                    font-size: 1rem;
+                    margin-bottom: rem(20);
+                    font-weight: 300;
+                }
+
+
+            }
+
+            &__days {
+                background: $darkBlue;
+                padding: rem(30) rem(34);
+                border-radius: rem(20);
+
+                .active {
+                    color: #fff;
+                }
+
+                p {
+                    cursor: pointer;
+                    padding: rem(20) 0;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+
+            .img__wrapper {
+                width: 100%;
+                z-index: 1;
+                border-top-left-radius: rem(20);
+                border-top-right-radius: rem(20);
+                display: flex;
+                justify-content: flex-end;
+                padding: 0 rem(14);
+                max-height: rem(48);
+
+                @include breakpointDown(mobile) {
+                    position: absolute;
+                    top: -30px;
+                }
+
+                img {
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: rem(30);
+
+            @include breakpointDown(mobile) {
+                margin-bottom: rem(10);
+            }
+
+        }
+
+    }
+
+    .row-2 {
+        grid-row: 1 / 3;
+    }
+
+    &__content-wrapper {
+        cursor: pointer;
+        border-radius: rem(20);
+        padding: rem(34) rem(30) rem(34);
+        background: $darkBlue;
+        position: absolute;
+        width: 100%;
+        top: 33px;
+        z-index: 2;
+        transition: background 300ms ease-in;
+
+        @include breakpointDown(mobile) {
+            position: relative;
+            top: 0;
+        }
+
+        &:hover {
+            background: #34397b;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: rem(24);
+        }
+    }
+
+    .main__time {
+        @include breakpointDown(mobile) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h1 {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
